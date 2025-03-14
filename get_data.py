@@ -22,21 +22,15 @@ def batch_process_images(input_dir="raw_img", output_dir="data"):
     if not image_paths:
         raise FileNotFoundError(f"未找到 {input_dir} 中的 JPG 文件")
 
-    # 初始化处理器
-    div_processor = ImageDiv(
-        sharpness=2.0,  # 锐化强度（0.5~3.0）
-        threshold=90,  # 二值化阈值（0~255）
-        kernel_size=(6, 6),  # 形态学核大小
-    )
+    from image_utils import create_image_processors
 
-    image_cut = ImageCut(
-        target_ratio=0.5, resample=Image.NEAREST  # 宽高比1:2  # 使用最近邻插值
-    )
+    # 初始化处理器
+    div_processor, image_cut = create_image_processors()
 
     # 遍历处理每个文件
     for input_path in image_paths:
         # 获取文件名（不含扩展名）
-        filename = os.path.splitext(os.path.basename(input_path))[0]+"r"
+        filename = os.path.splitext(os.path.basename(input_path))[0] + "r"
         print(f"处理文件：{input_path}")
 
         try:
