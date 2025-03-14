@@ -1,4 +1,4 @@
-from PIL import Image, ImageOps
+from PIL import Image
 import numpy as np
 
 
@@ -18,7 +18,7 @@ class ImageProcessor:
         self.cropped_img = None
         self.resized_img = None
 
-    def load_image(self,img):
+    def load_image(self, img):
         """加载并验证输入图像"""
         try:
             self.original_img = img

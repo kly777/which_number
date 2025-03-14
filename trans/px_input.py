@@ -1,10 +1,8 @@
-from PIL import Image, ImageOps, ImageFilter
 import numpy as np
 from collections import deque
 
 
 def pix(img):
-
     im = img
     im_array = np.array(im)
 

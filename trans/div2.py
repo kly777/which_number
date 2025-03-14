@@ -18,7 +18,7 @@ class ImageProcessor:
         self.processed_img = None
         self.contrast = contrast
 
-    def load_image(self,path):
+    def load_image(self, path):
         """加载并转换为灰度图"""
         try:
             self.original_img = Image.open(path).convert("L")
@@ -33,7 +33,6 @@ class ImageProcessor:
         enhancer = ImageEnhance.Sharpness(self.original_img)
         self.original_img = enhancer.enhance(self.sharpness)
 
-
     def binary_threshold(self):
         """二值化处理"""
         img_array = np.array(self.original_img)
@@ -42,9 +41,7 @@ class ImageProcessor:
         lower_threshold = min_val
         upper_threshold = min_val + 40
         self.binary_array = np.where(
-            (img_array >= lower_threshold) & (img_array <= upper_threshold),
-            0,
-            255
+            (img_array >= lower_threshold) & (img_array <= upper_threshold), 0, 255
         ).astype(np.uint8)
         # print(f"二值化阈值：{self.threshold}")
 
@@ -63,7 +60,7 @@ class ImageProcessor:
     #     else:
     #         raise ValueError("请先执行处理流程")
 
-    def process(self,img_path):
+    def process(self, img_path):
         """完整处理流程"""
         self.load_image(img_path)
         self.enhance_sharpness()

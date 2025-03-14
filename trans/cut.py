@@ -1,4 +1,4 @@
-from PIL import Image, ImageOps
+from PIL import Image
 import numpy as np
 
 # 1. 打开已经二值化的图像
@@ -21,10 +21,7 @@ col_length = max_col - min_col
 print(row_length, col_length)
 
 # 3. 裁剪到边界框
-cropped_array = img_array[
-    min_row : max_row,
-    min_col : max_col
-]
+cropped_array = img_array[min_row:max_row, min_col:max_col]
 cropped_img = Image.fromarray(cropped_array)
 
 current_width, current_height = cropped_img.size

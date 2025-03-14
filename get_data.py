@@ -1,6 +1,6 @@
 import os
 from glob import glob
-from PIL import Image, ImageOps
+from PIL import Image
 from trans.cut2 import ImageProcessor as ImageCut
 from trans.div2 import ImageProcessor as ImageDiv
 from trans.px_data2 import pxify

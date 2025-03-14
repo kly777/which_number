@@ -1,4 +1,3 @@
-from PIL import Image, ImageOps, ImageFilter
 import numpy as np
 from collections import deque
 
@@ -25,10 +24,11 @@ def distance_transform(arr):
                 dist[ni, nj] = dist[i, j] + 1
                 q.append((ni, nj))
     max_value = np.max(dist)
-    dist=dist/max_value
+    dist = dist / max_value
     return dist
 
-def pxify(img,name):
+
+def pxify(img, name):
     im = img
     im_array = np.array(im)
 
@@ -59,7 +59,7 @@ def pxify(img,name):
 
     binary_data = distance_array.astype(float)
 
-    np.savetxt(name+".txt", binary_data, fmt="%f", delimiter=" ")
+    np.savetxt(name + ".txt", binary_data, fmt="%f", delimiter=" ")
+
 
 # binary_data = np.loadtxt("binary.txt", dtype=int)
-

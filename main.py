@@ -1,7 +1,7 @@
 from glob import glob
 import os
 from trans.cut2 import ImageProcessor as ImageCut
-from PIL import Image, ImageOps
+from PIL import Image
 from trans.div2 import ImageProcessor as ImageDiv
 from trans.px_input import pix
 from diff import compare_all_files
