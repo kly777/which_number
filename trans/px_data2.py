@@ -1,31 +1,5 @@
 import numpy as np
-from collections import deque
-
-
-def distance_transform(arr):
-    rows, cols = arr.shape
-    dist = np.full_like(arr, -1, dtype=float)
-    q = deque()
-
-    # 初始化队列：所有0的位置距离为0
-    for i in range(rows):
-        for j in range(cols):
-            if arr[i, j] == 0:
-                dist[i, j] = 0
-                q.append((i, j))
-
-    # BFS扩展
-    dirs = [(-1, 0), (1, 0), (0, -1), (0, 1)]  # 四方向
-    while q:
-        i, j = q.popleft()
-        for di, dj in dirs:
-            ni, nj = i + di, j + dj
-            if 0 <= ni < rows and 0 <= nj < cols and dist[ni, nj] == -1:
-                dist[ni, nj] = dist[i, j] + 1
-                q.append((ni, nj))
-    max_value = np.max(dist)
-    dist = dist / max_value
-    return dist
+from .distance_transform import distance_transform
 
 
 def pxify(img, name):
@@ -60,6 +34,3 @@ def pxify(img, name):
     binary_data = distance_array.astype(float)
 
     np.savetxt(name + ".txt", binary_data, fmt="%f", delimiter=" ")
-
-
-# binary_data = np.loadtxt("binary.txt", dtype=int)
