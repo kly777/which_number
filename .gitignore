@@ -1,6 +1,15 @@
+# Virtual environments
 /.venv
-/.vscode
 /env
-/__pycache__
 
-*.pyc
+# VSCode settings
+/.vscode
+
+# Python cache
+/__pycache__
+/*.pyc
+/*.pyo
+/*.pyd
+
+*.tmp
+*.temp
