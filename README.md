@@ -6,14 +6,14 @@
 
 - `data/`：存放数据文件
 - `kit/`：包含辅助脚本
-- `raw_img/`：存放原始图像文件
+- `raw_img/`：待识别图像文件
 - `trans/`：包含图像处理脚本
 
 ## 主要文件
 
 - `get_data.py`：用于获取数据
 - `main.py`：主程序入口
-- `diff.py`：用于比较图像差异
+- `diff.py`：用于比较待识别图像和已有图像数据的差异
 - `trans/div2.py`：用于二值化图像
 - `trans/cut2.py`：用于裁剪图像
 - `trans/px-data.py` 和 `trans/px-input.py`：用于处理图片为低像素数组数据
