@@ -50,7 +50,6 @@ class ImageDiv:
         # print(f"应用开运算，核大小：{self.kernel.shape}")
 
     def process(self, img_path: str) -> Image.Image:
-        """处理流程"""
         self.load_image(img_path)
         self.enhance_sharpness()
         self.binary_threshold()
