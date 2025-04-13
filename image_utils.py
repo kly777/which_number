@@ -1,6 +1,6 @@
 from PIL import Image
-from trans.cut2 import ImageProcessor as ImageCut
-from trans.div2 import ImageProcessor as ImageDiv
+from trans.cut2 import ImageCut
+from trans.div2 import ImageDiv
 
 
 def create_image_processors():

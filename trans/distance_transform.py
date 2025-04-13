@@ -1,6 +1,6 @@
 import numpy as np
 from collections import deque
-from typing import Tuple
+
 
 def distance_transform(arr: np.ndarray) -> np.ndarray:
     """
@@ -32,7 +32,7 @@ def distance_transform(arr: np.ndarray) -> np.ndarray:
             if 0 <= ni < rows and 0 <= nj < cols and dist[ni, nj] == -1:
                 dist[ni, nj] = dist[i, j] + 1
                 q.append((ni, nj))
-    
+
     # 归一化
     max_value = np.max(dist)
     if max_value > 0:

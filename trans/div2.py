@@ -2,7 +2,8 @@ from PIL import Image, ImageEnhance
 import numpy as np
 import cv2
 
-class ImageProcessor:
+
+class ImageDiv:
     def __init__(
         self,
         sharpness: float = 2.0,
@@ -49,7 +50,7 @@ class ImageProcessor:
         # print(f"应用开运算，核大小：{self.kernel.shape}")
 
     def process(self, img_path: str) -> Image.Image:
-        """完整处理流程"""
+        """处理流程"""
         self.load_image(img_path)
         self.enhance_sharpness()
         self.binary_threshold()

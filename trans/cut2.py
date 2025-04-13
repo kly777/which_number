@@ -1,7 +1,8 @@
 from PIL import Image
 import numpy as np
 
-class ImageProcessor:
+
+class ImageCut:
     def __init__(self, target_ratio: float = 1 / 2, resample: int = Image.LANCZOS):
         """
         图像处理类初始化
@@ -66,7 +67,6 @@ class ImageProcessor:
         # print(f"调整后尺寸：{self.resized_img.size}")
 
     def process(self, img: Image.Image) -> Image.Image:
-        """完整处理流程"""
         self.load_image(img)
         self.crop_image()
         self.resize_image()
