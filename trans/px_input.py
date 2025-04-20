@@ -6,12 +6,6 @@ from .distance_transform import distance_transform
 def pix(img: Image.Image) -> np.ndarray:
     """
     将图像转换为16x8的归一化距离数组
-
-    Args:
-        img (Image.Image): 输入图像
-
-    Returns:
-        np.ndarray: 16x8的归一化距离数组
     """
     # 转换为numpy数组
     im_array = np.array(img)

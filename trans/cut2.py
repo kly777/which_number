@@ -4,13 +4,6 @@ import numpy as np
 
 class ImageCut:
     def __init__(self, target_ratio: float = 1 / 2, resample: int = Image.LANCZOS):
-        """
-        图像处理类初始化
-
-        Args:
-            target_ratio (float): 目标宽高比（默认1:2）
-            resample (int): 缩放插值方法（默认Image.LANCZOS）
-        """
         self.target_ratio: float = target_ratio
         self.resample: int = resample
         self.original_img: Image.Image | None = None

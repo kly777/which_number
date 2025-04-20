@@ -5,12 +5,6 @@ from collections import deque
 def distance_transform(arr: np.ndarray) -> np.ndarray:
     """
     计算二维数组中每个像素到最近0像素的距离
-
-    Args:
-        arr (np.ndarray): 输入二值数组，0表示目标像素
-
-    Returns:
-        np.ndarray: 归一化的距离数组
     """
     rows, cols = arr.shape
     dist = np.full_like(arr, -1, dtype=float)

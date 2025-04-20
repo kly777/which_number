@@ -23,7 +23,6 @@ def process_images(input_dir: str) -> None:
         raise FileNotFoundError(f"未找到 {input_dir} 中的 JPG 文件")
 
     for image_path in image_paths:
-        # 使用工具函数处理图像
         cuted_img: Image.Image = process_image(image_path, div_processor, processor)
 
         # 转换为像素数组
